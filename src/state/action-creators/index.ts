@@ -5,16 +5,16 @@ import { Action } from "../actions";
 
 export const searchRepositories = (term: string) => async (dispatch: Dispatch<Action>) => {
   dispatch({
-    type: ActionType.SEARCH_REPOSITORIES
+    type: ActionType.SEARCH_REPOSITORIES,
   });
 
   try {
     const { data } = await axios.get(
-      'registry.npmjs.org/-/v1/search', 
+      'https://registry.npmjs.org/-/v1/search', 
       {
         params: {
-          text: term
-        }
+          text: term,
+        },
       }
     );
 
