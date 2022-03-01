@@ -6,3 +6,7 @@ const reducers = combineReducers({
 });
 
 export default reducers;
+
+// type of the reducers return type - 
+// specifies the type of repositories
+export type RootState = ReturnType<typeof reducers>;
